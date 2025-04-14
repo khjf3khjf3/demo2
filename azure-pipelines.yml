@@ -1,0 +1,17 @@
+trigger:
+- master
+
+pool:
+  name: Azure Pipelines
+
+steps:
+  - task: Gradle@3
+    displayName: '🛠️ Build with Gradle'
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: build
+      options: ''
+      publishJUnitResults: false
+      javaHomeOption: 'Path'
+      jdkDirectory: '/usr/lib/jvm/java-17-openjdk'
+      jdkArchitectureOption: 'x64'
